@@ -1,0 +1,30 @@
+
+.meterContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background-color: var(--secondary-bg, #1a1a1a);
+  z-index: 9999;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.meterBar {
+  height: 100%;
+  background: linear-gradient(90deg, #00e5ff 0%, #00ff88 50%, #ffcc00 80%, #ff3333 100%);
+  position: relative;
+  transition: width 0.1s ease-out;
+}
+
+.ledGlow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px var(--primary-color, #00e5ff);
+  filter: blur(2px);
+}

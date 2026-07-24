@@ -1,0 +1,52 @@
+.footer {
+  background: var(--bg-color);
+  padding: 6rem 0 2rem;
+  border-top: 1px solid 2ec rgba(255,255,255,0.05);
+  margin-top: 4rem;
+}
+
+.footerGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+.brandInfo p, .orgs p {
+  color: var(--text-color);
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.links ul, .legal ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.links li, .legal li {
+  margin-bottom: 0.5rem;
+}
+
+.links a, .legal a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s;
+}
+
+.links a:hover, .legal a:hover {
+  color: var(--primary-color);
+}
+
+.disclaimer {
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 2rem;
+  color: var(--text-color);
+  font-size: 0.85rem;
+}
+
+.disclaimer p {
+  margin-bottom: 0.5rem;
+}

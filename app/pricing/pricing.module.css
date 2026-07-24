@@ -1,0 +1,260 @@
+
+.main {
+  position: relative;
+  overflow: hidden;
+  padding-top: 120px;
+  min-height: 100vh;
+}
+
+.header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 5rem;
+  padding: 0 1rem;
+}
+
+.header h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, #ffcc00, #ff8800);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.header p {
+  font-size: 1.2rem;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* Pricing Cards Isometric */
+.pricingGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  perspective: 1200px;
+}
+
+.priceCard {
+  background: var(--secondary-bg, #1a1a1a);
+  border: 1px solid rgba(255, 204, 0, 0.2);
+  border-radius: 12px;
+  padding: 3rem 2rem;
+  width: 100%;
+  max-width: 350px;
+  text-align: center;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: rotateY(-10deg) rotateX(10deg);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 
+    -15px 15px 25px rgba(0, 0, 0, 0.5),
+    inset 0 0 15px rgba(255, 204, 0, 0.05);
+}
+
+.priceCard:hover {
+  transform: translateY(-10px) rotateY(0deg) rotateX(0deg);
+  border-color: rgba(255, 204, 0, 0.5);
+  box-shadow: 
+    0 15px 30px rgba(0, 0, 0, 0.6),
+    0 0 30px rgba(255, 204, 0, 0.2),
+    inset 0 0 30px rgba(255, 204, 0, 0.1);
+}
+
+.priceTitle {
+  font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.priceAmount {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #ffcc00;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 10px rgba(255, 204, 0, 0.3);
+}
+
+.priceAmount span {
+  font-size: 1.2rem;
+  color: #aaa;
+}
+
+.priceDesc {
+  color: var(--text-color);
+  line-height: 1.6;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* Knowledge Base / Circuit Layout */
+.kbSection {
+  margin-top: 8rem;
+  padding: 4rem 2rem;
+  background: rgba(0, 0, 0, 0.3);
+  position: relative;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.kbHeader {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.kbHeader h2 {
+  font-size: 2.5rem;
+  color: #00ff88;
+  margin-bottom: 1rem;
+}
+
+.circuitGrid {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Central glowing wire */
+.circuitWire {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.circuitGlow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%; /* Animated by GSAP */
+  background: #00ff88;
+  box-shadow: 0 0 15px #00ff88, 0 0 30px #00ff88;
+  border-radius: 2px;
+}
+
+.kbNode {
+  position: relative;
+  width: 45%;
+  margin-bottom: 4rem;
+  background: var(--secondary-bg, #1a1a1a);
+  border: 1px solid rgba(0, 255, 136, 0.2);
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition: border-color 0.3s;
+}
+
+.kbNode:hover {
+  border-color: rgba(0, 255, 136, 0.6);
+}
+
+.kbNode::before {
+  content: "";
+  position: absolute;
+  top: 30px;
+  width: 20px;
+  height: 4px;
+  background: rgba(0, 255, 136, 0.4);
+}
+
+/* Connectors to central wire */
+.kbNode.left {
+  float: left;
+  clear: both;
+}
+.kbNode.left::before {
+  right: -20px;
+}
+
+.kbNode.right {
+  float: right;
+  clear: both;
+  transform: translateY(4rem);
+}
+.kbNode.right::before {
+  left: -20px;
+}
+
+/* Circuit dots */
+.kbNode::after {
+  content: "";
+  position: absolute;
+  top: 24px;
+  width: 16px;
+  height: 16px;
+  background: #111;
+  border: 2px solid #00ff88;
+  border-radius: 50%;
+  z-index: 2;
+  box-shadow: 0 0 10px #00ff88;
+}
+.kbNode.left::after {
+  right: -30px;
+}
+.kbNode.right::after {
+  left: -30px;
+}
+
+.kbNode h3 {
+  color: #00ff88;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.kbNode p {
+  color: var(--text-color);
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+.kbNode ul {
+  margin-top: 1rem;
+  padding-left: 1.2rem;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.kbNode li {
+  margin-bottom: 0.5rem;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media (max-width: 768px) {
+  .priceCard {
+    transform: none;
+  }
+  .circuitWire {
+    left: 20px;
+  }
+  .kbNode {
+    width: calc(100% - 50px);
+    float: right !important;
+    transform: none !important;
+    margin-bottom: 2rem;
+  }
+  .kbNode::before {
+    left: -20px !important;
+    width: 20px !important;
+    right: auto !important;
+  }
+  .kbNode::after {
+    left: -30px !important;
+    right: auto !important;
+  }
+}

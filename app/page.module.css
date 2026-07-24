@@ -1,0 +1,260 @@
+
+.main {
+  position: relative;
+  min-height: 100vh;
+}
+
+.hero {
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  padding: 2rem;
+}
+
+.title {
+  margin-top: 2rem;
+  background: linear-gradient(90deg, var(--text-light), var(--primary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  margin-top: 1.5rem;
+  color: var(--text-color);
+  max-width: 600px;
+  font-size: 1.25rem;
+}
+
+.ctaButton {
+  margin-top: 3.5rem;
+  padding: 1.2rem 3rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--bg-color);
+  background-color: var(--primary-color);
+  border-radius: 50px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.3);
+  display: inline-block;
+}
+
+.ctaButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 40px rgba(0, 229, 255, 0.8);
+  background-color: var(--accent-color);
+}
+
+.section {
+  padding: 8rem 0;
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  margin-top: 4rem;
+}
+
+.serviceCard {
+  background: var(--surface-color);
+  padding: 3.5rem 2.5rem;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.05);
+  transition: all 0.3s ease;
+}
+
+.serviceCard:hover {
+  border-color: var(--primary-color);
+  box-shadow: 0 15px 40px rgba(0, 229, 255, 0.15);
+  transform: translateY(-8px);
+}
+
+.footer {
+  text-align: center;
+  padding: 6rem 0 4rem;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.testimonialSection {
+  padding: 8rem 0;
+  background: linear-gradient(180deg, var(--bg-color) 0%, var(--surface-color) 100%);
+}
+
+.testimonialGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  margin-top: 4rem;
+}
+
+.testimonialCard {
+  background: var(--bg-color);
+  padding: 3rem 2rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.05);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.testimonialCard:hover {
+  box-shadow: 0 0 25px rgba(250, 255, 0, 0.15);
+  border-color: var(--accent-color);
+  transform: translateY(-5px);
+}
+
+.stars {
+  color: var(--accent-color);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+}
+
+.quote {
+  font-style: italic;
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.author {
+  font-weight: 700;
+  color: var(--text-light);
+}
+
+
+/* --- Google Reviews Widget Styles --- */
+.googleHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.googleSummary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.starRow {
+  display: flex;
+  gap: 4px;
+}
+.starRow svg {
+  width: 28px;
+  height: 28px;
+}
+
+.starRowSmall {
+  display: flex;
+  gap: 2px;
+  margin-bottom: 1rem;
+}
+.starRowSmall svg {
+  width: 18px;
+  height: 18px;
+}
+
+.poweredBy {
+  margin-top: 0.5rem;
+}
+
+.googleReviewsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.googleCard {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  color: #333;
+}
+
+.googleCardHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.reviewerInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.reviewerName {
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin: 0;
+  color: #202124;
+}
+
+.reviewTime {
+  font-size: 0.8rem;
+  color: #70757a;
+  margin: 0;
+}
+
+.googleIconSmall {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.googleIconSmall svg {
+  width: 18px;
+  height: 18px;
+}
+
+.googleQuote {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #3c4043;
+  margin: 0;
+}
+
+
+.heroTextContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(10, 15, 30, 0.6);
+  padding: 3rem;
+  border-radius: 20px;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+  pointer-events: none;
+  z-index: 10;
+}
+
+.heroTextContainer .ctaButton {
+  pointer-events: auto; /* Allow clicking the button */
+}

@@ -1,0 +1,73 @@
+
+.topBar {
+  background: var(--background);
+  color: var(--text-light);
+  font-size: 0.85rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+  z-index: 1001;
+  letter-spacing: 0.5px;
+}
+@media (max-width: 768px) {
+  .topBar {
+    display: none;
+  }
+}
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(11, 12, 16, 0.9);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  padding: 1rem 0;
+}
+
+.navContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-light);
+  text-decoration: none;
+  letter-spacing: 0.05em;
+}
+
+.navLinks {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.navLink {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.navLink:hover, .navLink.active {
+  color: var(--accent-color);
+  text-shadow: 0 0 10px rgba(250, 255, 0, 0.5);
+}
+
+@media (max-width: 768px) {
+  .navLinks {
+    display: none; /* For simplicity, hiding on mobile for now, can add hamburger later */
+  }
+}
+.scrolled {
+  background: rgba(11, 12, 16, 0.95);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+  padding: 0.5rem 0;
+  transition: all 0.3s ease;
+}

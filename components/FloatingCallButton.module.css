@@ -1,0 +1,99 @@
+
+.floatingBtn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: linear-gradient(145deg, #ff3b3b, #c40000);
+  color: white;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 
+    0 10px 15px rgba(0, 0, 0, 0.4), 
+    inset 0 4px 8px rgba(255, 255, 255, 0.4),
+    inset 0 -4px 8px rgba(0, 0, 0, 0.2),
+    0 0 0 6px #333,
+    0 0 0 8px #666;
+  z-index: 9999;
+  opacity: 0;
+  transform: translateY(20px) scale(0.9);
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  pointer-events: none;
+}
+
+:global([data-theme='light']) .floatingBtn {
+  box-shadow: 
+    0 10px 15px rgba(0, 0, 0, 0.3), 
+    inset 0 4px 8px rgba(255, 255, 255, 0.6),
+    inset 0 -4px 8px rgba(0, 0, 0, 0.2),
+    0 0 0 6px #e0e0e0,
+    0 0 0 8px #999;
+}
+
+.floatingBtn.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+  animation: pulseGlow 2s infinite;
+}
+
+.floatingBtn:active {
+  transform: translateY(4px) scale(0.95);
+  box-shadow: 
+    0 2px 5px rgba(0, 0, 0, 0.6), 
+    inset 0 2px 4px rgba(255, 255, 255, 0.2),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.4),
+    0 0 0 6px #333,
+    0 0 0 8px #666;
+  animation: none;
+}
+
+:global([data-theme='light']) .floatingBtn:active {
+    box-shadow: 
+    0 2px 5px rgba(0, 0, 0, 0.4), 
+    inset 0 2px 4px rgba(255, 255, 255, 0.2),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.4),
+    0 0 0 6px #e0e0e0,
+    0 0 0 8px #999;
+}
+
+
+.icon {
+  font-size: 1.8rem;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.text {
+  display: none;
+}
+
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 0 0 rgba(255, 59, 59, 0.7), 0 0 0 6px #333, 0 0 0 8px #666; }
+  70% { box-shadow: 0 0 0 20px rgba(255, 59, 59, 0), 0 0 0 6px #333, 0 0 0 8px #666; }
+  100% { box-shadow: 0 0 0 0 rgba(255, 59, 59, 0), 0 0 0 6px #333, 0 0 0 8px #666; }
+}
+
+:global([data-theme='light']) {
+  @keyframes pulseGlow {
+    0% { box-shadow: 0 0 0 0 rgba(255, 59, 59, 0.7), 0 0 0 6px #e0e0e0, 0 0 0 8px #999; }
+    70% { box-shadow: 0 0 0 20px rgba(255, 59, 59, 0), 0 0 0 6px #e0e0e0, 0 0 0 8px #999; }
+    100% { box-shadow: 0 0 0 0 rgba(255, 59, 59, 0), 0 0 0 6px #e0e0e0, 0 0 0 8px #999; }
+  }
+}
+
+@media (max-width: 768px) {
+  .floatingBtn {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 60px;
+    height: 60px;
+  }
+  .icon {
+    font-size: 1.5rem;
+  }
+}

@@ -1,0 +1,275 @@
+.main {
+  padding-top: 120px;
+  min-height: 100vh;
+  padding-bottom: 60px;
+}
+
+.header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  padding: 0 20px;
+}
+
+.header h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #fff, #a5b4fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Postcode Checker Container */
+.checkerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 4rem auto;
+  padding: 3rem;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(0, 229, 255, 0.2);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  max-width: 600px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.inputGroup {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  z-index: 2;
+}
+
+.postcodeInput {
+  padding: 1rem 1.5rem;
+  font-size: 1.5rem;
+  border-radius: 10px;
+  border: 2px solid rgba(0, 229, 255, 0.3);
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  width: 200px;
+  text-align: center;
+  outline: none;
+  transition: border-color 0.3s ease;
+  font-family: monospace;
+}
+
+.postcodeInput:focus {
+  border-color: #00e5ff;
+}
+
+/* Classic Switch Design */
+.switchWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.switchBase {
+  width: 60px;
+  height: 100px;
+  background: linear-gradient(to bottom, #333, #111);
+  border-radius: 10px;
+  border: 2px solid #444;
+  position: relative;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.8), 0 5px 15px rgba(0,0,0,0.5);
+}
+
+.switchLever {
+  width: 30px;
+  height: 40px;
+  background: linear-gradient(to bottom, #d1d5db, #9ca3af);
+  border-radius: 5px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 10px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+  transition: top 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.switchWrapper.on .switchLever {
+  top: 46px; /* Flips down */
+  background: linear-gradient(to bottom, #ffcc00, #ff8800);
+}
+
+.switchLabel {
+  margin-top: 1rem;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Wire & Bulb */
+.wireContainer {
+  height: 60px;
+  width: 4px;
+  background: #333;
+  position: relative;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+.electricity {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background: #00e5ff;
+  box-shadow: 0 0 15px #00e5ff, 0 0 30px #00e5ff;
+  transition: height 0.5s ease;
+}
+
+.bulbContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.bulbIcon {
+  font-size: 5rem;
+  color: #333; /* Off state */
+  transition: all 0.5s ease;
+  filter: drop-shadow(0 0 0px transparent);
+}
+
+.bulbIcon.glow {
+  color: #ffcc00; /* On state */
+  filter: drop-shadow(0 0 20px #ffcc00) drop-shadow(0 0 50px #ff8800);
+}
+.bulbIcon.error {
+  color: #ff3333;
+  filter: drop-shadow(0 0 20px #ff3333);
+}
+
+.resultText {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  height: 2rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Map Section */
+.mapSection {
+  margin: 5rem auto;
+  max-width: 1200px;
+  padding: 0 20px;
+}
+
+.mapWrapper {
+  border-radius: 20px;
+  overflow: hidden;
+  border: 2px solid #00e5ff;
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.4), inset 0 0 30px rgba(0, 229, 255, 0.5);
+  height: 500px;
+  position: relative;
+  background: #000;
+}
+
+/* High-tech energy overlay grid */
+.mapWrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    linear-gradient(rgba(0, 229, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 229, 255, 0.1) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none; /* Let user click map */
+  z-index: 2;
+  box-shadow: inset 0 0 50px #000;
+}
+
+/* Glowing scanning line */
+.mapWrapper::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background: #00e5ff;
+  box-shadow: 0 0 20px #00e5ff, 0 0 40px #00e5ff;
+  z-index: 3;
+  pointer-events: none;
+  animation: scan 4s linear infinite;
+  opacity: 0.6;
+}
+
+@keyframes scan {
+  0% { top: -10px; }
+  100% { top: 100%; }
+}
+
+/* Apply CSS filter to iframe to make it dark and neon */
+.mapWrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  filter: invert(100%) sepia(100%) saturate(300%) hue-rotate(130deg) brightness(0.7) contrast(1.5);
+  position: relative;
+  z-index: 1;
+}
+
+/* Suburb Lists */
+.suburbSection {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.suburbGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.suburbColumn {
+  background: rgba(15, 23, 42, 0.4);
+  border-radius: 15px;
+  padding: 2rem;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.suburbColumn h3 {
+  color: #00e5ff;
+  border-bottom: 2px solid rgba(0, 229, 255, 0.2);
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
+}
+
+.suburbColumn ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.suburbColumn li {
+  padding: 0.5rem 0;
+  color: #cbd5e1;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.suburbColumn li::before {
+  content: '⚡';
+  font-size: 0.8rem;
+}
