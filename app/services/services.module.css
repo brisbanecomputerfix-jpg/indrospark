@@ -28,49 +28,24 @@
 }
 
 .isometricContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8rem;
-  padding: 4rem 1rem;
-  max-width: 1200px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 3rem;
+  padding: 4rem 2rem;
+  max-width: 1400px;
   margin: 0 auto;
   position: relative;
 }
 
 /* Background Wire SVG */
 .wireSvg {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  pointer-events: none;
-}
-
-.wirePath {
-  stroke: var(--primary-color, #00e5ff);
-  stroke-width: 4;
-  fill: none;
-  stroke-dasharray: 10 10;
-  opacity: 0.3;
-}
-
-.wireGlow {
-  stroke: #00ff88;
-  stroke-width: 4;
-  fill: none;
-  filter: blur(4px);
-  opacity: 0; /* Animated by GSAP */
+  display: none; /* Hidden for grid layout */
 }
 
 /* Isometric Cards */
 .isoCardWrapper {
   perspective: 1500px;
   width: 100%;
-  max-width: 800px;
   display: flex;
   justify-content: center;
 }
@@ -80,15 +55,17 @@
   background: var(--secondary-bg, #1a1a1a);
   border: 1px solid rgba(0, 229, 255, 0.2);
   border-radius: 12px;
-  padding: 3rem;
+  padding: 2.5rem;
   color: var(--text-color);
   transform-style: preserve-3d;
-  transform: rotateX(20deg) rotateY(-15deg) rotateZ(5deg);
+  transform: rotateX(10deg) rotateY(-5deg) rotateZ(2deg);
   transition: transform 0.5s ease, box-shadow 0.5s ease;
   box-shadow: 
-    -20px 20px 30px rgba(0, 0, 0, 0.5),
+    -10px 10px 20px rgba(0, 0, 0, 0.5),
     inset 0 0 20px rgba(0, 229, 255, 0.05);
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .isoCard::before {
@@ -101,9 +78,9 @@
 }
 
 .isoCard:hover {
-  transform: rotateX(10deg) rotateY(-5deg) rotateZ(2deg) translateY(-10px);
+  transform: rotateX(5deg) rotateY(-2deg) rotateZ(1deg) translateY(-10px);
   box-shadow: 
-    -10px 10px 20px rgba(0, 0, 0, 0.6),
+    -5px 5px 15px rgba(0, 0, 0, 0.6),
     0 0 30px rgba(0, 229, 255, 0.2),
     inset 0 0 30px rgba(0, 229, 255, 0.1);
   border-color: rgba(0, 229, 255, 0.5);
@@ -112,15 +89,15 @@
 .cardHeader {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   padding-bottom: 1rem;
 }
 
 .cardIcon {
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   background: rgba(0, 229, 255, 0.1);
   border-radius: 12px;
   display: flex;
@@ -128,41 +105,50 @@
   justify-content: center;
   border: 1px solid rgba(0, 229, 255, 0.3);
   box-shadow: 0 0 15px rgba(0, 229, 255, 0.2);
+  flex-shrink: 0;
 }
 
 .cardIcon svg {
-  width: 32px;
-  height: 32px;
-  fill: var(--primary-color, #00e5ff);
+  width: 24px;
+  height: 24px;
+  color: var(--primary-color, #00e5ff);
 }
 
 .cardTitle {
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin: 0;
   color: #fff;
+  line-height: 1.2;
+}
+
+.cardContent {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .cardContent p {
-  line-height: 1.8;
+  line-height: 1.6;
   margin-bottom: 1.5rem;
-  font-size: 1.1rem;
+  font-size: 1rem;
+  color: #ccc;
 }
 
 .serviceList {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1rem;
+  grid-template-columns: 1fr;
+  gap: 0.8rem;
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: auto 0 0 0;
 }
 
 .serviceList li {
   background: rgba(0,0,0,0.3);
-  padding: 0.8rem 1rem;
+  padding: 0.6rem 0.8rem;
   border-radius: 6px;
   border-left: 3px solid var(--primary-color, #00e5ff);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -175,16 +161,16 @@
 
 /* Alternate isometric rotation for every other card */
 .isoCardWrapper:nth-child(even) .isoCard {
-  transform: rotateX(20deg) rotateY(15deg) rotateZ(-5deg);
+  transform: rotateX(10deg) rotateY(5deg) rotateZ(-2deg);
   box-shadow: 
-    20px 20px 30px rgba(0, 0, 0, 0.5),
+    10px 10px 20px rgba(0, 0, 0, 0.5),
     inset 0 0 20px rgba(0, 229, 255, 0.05);
 }
 
 .isoCardWrapper:nth-child(even) .isoCard:hover {
-  transform: rotateX(10deg) rotateY(5deg) rotateZ(-2deg) translateY(-10px);
+  transform: rotateX(5deg) rotateY(2deg) rotateZ(-1deg) translateY(-10px);
   box-shadow: 
-    10px 10px 20px rgba(0, 0, 0, 0.6),
+    5px 5px 15px rgba(0, 0, 0, 0.6),
     0 0 30px rgba(0, 229, 255, 0.2),
     inset 0 0 30px rgba(0, 229, 255, 0.1);
 }
@@ -222,18 +208,17 @@
 }
 
 @media (max-width: 768px) {
+  .isometricContainer {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2rem 1rem;
+  }
   .isoCard {
     transform: none !important;
     padding: 1.5rem;
   }
   .isoCardWrapper:nth-child(even) .isoCard {
     transform: none !important;
-  }
-  .wireSvg {
-    display: none; /* Hide wire on mobile */
-  }
-  .isometricContainer {
-    gap: 3rem;
   }
   .header h1 {
     font-size: 2.2rem;
