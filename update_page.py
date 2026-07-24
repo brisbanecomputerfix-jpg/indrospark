@@ -1,4 +1,7 @@
-"use client";
+import sys
+path = '/Users/mac/.gemini/antigravity-ide/brain/559b1c3b-5eb3-4381-942f-71841fd12f81/sparky-indro/app/blog/page.js'
+
+new_content = """"use client";
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -67,3 +70,6 @@ export default function BlogPage() {
     </main>
   );
 }
+"""
+with open(path, 'w') as f:
+    f.write(new_content)
