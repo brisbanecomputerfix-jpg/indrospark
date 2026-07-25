@@ -3,7 +3,6 @@ import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import styles from "./areas.module.css";
-import Script from "next/script";
 
 export default function AreasPage() {
   const mainRef = useRef(null);
@@ -69,40 +68,10 @@ export default function AreasPage() {
     }
   };
 
-  const schemaData = {
-    "@context": "https://schema.org",
-    "@type": "Electrician",
-    "name": "Sparky Indro",
-    "image": "https://sparkyindro.com.au/logo.png",
-    "url": "https://sparkyindro.com.au",
-    "telephone": "1300 123 456",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "123 Moggill Rd",
-      "addressLocality": "Indooroopilly",
-      "addressRegion": "QLD",
-      "postalCode": "4068",
-      "addressCountry": "AU"
-    },
-    "areaServed": [
-      {
-        "@type": "City",
-        "name": "Brisbane",
-        "sameAs": "https://en.wikipedia.org/wiki/Brisbane"
-      },
-      {
-        "@type": "State",
-        "name": "Queensland"
-      }
-    ],
-    "priceRange": "$$"
-  };
-
+  
   return (
     <main ref={mainRef} className={styles.main}>
-      <Script id="schema-areas" type="application/ld+json">
-        {JSON.stringify(schemaData)}
-      </Script>
+      
 
       <div className={styles.header}>
         <h1 className="gsap-fade-up">Areas We Service</h1>
