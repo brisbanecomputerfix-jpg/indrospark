@@ -31,10 +31,12 @@ export default function GalleryPage() {
   const projects = [
     { src: "/gallery1.png", alt: "Switchboard Upgrade", title: "Residential Switchboard Upgrade", desc: "Complete modernization of an outdated switchboard to current safety standards with RCD protection. Located in Indooroopilly." },
     { src: "/gallery2.png", alt: "LED Downlights Installation", title: "Architectural LED Lighting", desc: "Installation of premium, energy-efficient LED downlights to brighten up a modern living space in Toowong." },
-    { src: "/gallery3.png", alt: "Outdoor Weatherproof Power Point", title: "Outdoor Power Point Installation", desc: "Installed a secure, Australian standard 240V dual weatherproof outdoor power point for an entertainment area in St Lucia." },
+    { src: "/gallery3_new.png", alt: "Outdoor Weatherproof Power Point", title: "Outdoor Power Point Installation", desc: "Installed a secure, Australian standard 240V dual weatherproof outdoor power point for an entertainment area in St Lucia." },
     { src: "/gallery4.png", alt: "Kitchen Pendant and LED Lighting", title: "Designer Kitchen Lighting", desc: "Elegant black pendant lights and warm-white LED strip lighting installed for a stunning kitchen renovation in Taringa." },
-    { src: "/gallery5.png", alt: "Modern Electrical Switchboard", title: "Commercial-Grade Switchboard Wiring", desc: "A neat and professional commercial-grade electrical switchboard installation, ensuring maximum safety and reliability." },
+    { src: "/gallery5_new.png", alt: "Modern Electrical Switchboard", title: "Commercial-Grade Switchboard Wiring", desc: "A neat and professional commercial-grade electrical switchboard installation, ensuring maximum safety and reliability." },
     { src: "/gallery6.png", alt: "Electric Vehicle Charger Installation", title: "EV Wall Charger Setup", desc: "Professional installation of a modern electric vehicle wall charger in a residential garage, ready for fast charging." },
+    { src: "/gallery_ceiling_fan.png", alt: "Modern Ceiling Fan", title: "Ceiling Fan Installation", desc: "Sleek and quiet modern ceiling fan installation in a contemporary living space, providing energy-efficient cooling and comfort." },
+    { src: "/gallery_security_camera.png", alt: "Outdoor Dome Security Camera", title: "Security Camera Setup", desc: "Professional, neatly wired installation of a high-definition dome security camera on the exterior eave of a modern home." },
   ];
 
   return (
