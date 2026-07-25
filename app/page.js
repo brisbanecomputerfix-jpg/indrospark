@@ -1,4 +1,7 @@
-
+"use client";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import styles from "./page.module.css";
 import AnimatedLogo from "@/components/AnimatedLogo";
 import SwitchboardBackground from "@/components/SwitchboardBackground";
@@ -14,8 +17,53 @@ import Link from "next/link";
 import ProblemTicker from "@/components/ProblemTicker";
 
 export default function Home() {
+  const mainRef = useRef(null);
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    
+    const ctx = gsap.context(() => {
+      // General fade up for elements with gsap-fade-up class
+      const fadeElements = gsap.utils.toArray('.gsap-fade-up');
+      
+      fadeElements.forEach((el) => {
+        gsap.fromTo(el, 
+          { y: 40, opacity: 0 },
+          { 
+            y: 0, 
+            opacity: 1, 
+            duration: 0.8, 
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: el,
+              start: "top 85%", // Trigger when top of element hits 85% of viewport
+            }
+          }
+        );
+      });
+
+      // Staggered fade up for service cards
+      gsap.fromTo(`.${styles.serviceCard}`, 
+        { y: 50, opacity: 0 },
+        { 
+          y: 0, 
+          opacity: 1, 
+          duration: 0.8, 
+          stagger: 0.15,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: `.${styles.servicesGrid}`,
+            start: "top 80%",
+          }
+        }
+      );
+    }, mainRef);
+    
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <main className={styles.main}>
+    <main ref={mainRef} className={styles.main}>
       <section className={styles.hero}>
         <SwitchboardBackground />
         <div className={styles.heroTextContainer}>
@@ -36,7 +84,7 @@ export default function Home() {
       <ProblemTicker />
 
       <section className={`${styles.section} container`}>
-        <h2 style={{ textAlign: "center" }}>Our Premium Services</h2>
+        <h2 className="gsap-fade-up" style={{ textAlign: "center" }}>Our Premium Services</h2>
         <div className={styles.servicesGrid}>
           <div className={styles.serviceCard}>
             <h3>Residential Electrical</h3>
@@ -53,16 +101,16 @@ export default function Home() {
         </div>
       </section>
 
-      <Testimonials />
-      <MeetTheTeam />
-      <About />
-      <WhyChooseUs />
-      <TrustBadges />
-      <Process />
-      <RecentJobs />
-      <FAQ />
+      <div className="gsap-fade-up"><Testimonials /></div>
+      <div className="gsap-fade-up"><MeetTheTeam /></div>
+      <div className="gsap-fade-up"><About /></div>
+      <div className="gsap-fade-up"><WhyChooseUs /></div>
+      <div className="gsap-fade-up"><TrustBadges /></div>
+      <div className="gsap-fade-up"><Process /></div>
+      <div className="gsap-fade-up"><RecentJobs /></div>
+      <div className="gsap-fade-up"><FAQ /></div>
 
-      <section className={styles.hero} style={{minHeight: "50vh"}}>
+      <section className={`${styles.hero} gsap-fade-up`} style={{minHeight: "50vh"}}>
         <h2>Ready to get started?</h2>
         <Link href="/quote" className={`${styles.ctaButton} magnetic-btn`}>
           Get a Free Quote Online
