@@ -1,226 +1,283 @@
-
 .main {
-  position: relative;
-  overflow: hidden;
-  padding-top: 120px;
+  padding: 120px 0 60px;
   min-height: 100vh;
+  background-color: var(--bg-color);
+  overflow: hidden;
 }
 
 .header {
   text-align: center;
   max-width: 800px;
-  margin: 0 auto 5rem;
-  padding: 0 1rem;
+  margin: 0 auto 3rem;
 }
 
 .header h1 {
   font-size: 3rem;
-  margin-bottom: 1rem;
-  background: linear-gradient(90deg, var(--primary-color, #00e5ff), #00ff88);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
 }
 
 .header p {
   font-size: 1.2rem;
   color: var(--text-color);
+  opacity: 0.9;
   line-height: 1.6;
 }
 
-.isometricContainer {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 3rem;
-  padding: 4rem 2rem;
-  max-width: 1400px;
-  margin: 0 auto;
-  position: relative;
-}
-
-/* Background Wire SVG */
-.wireSvg {
-  display: none; /* Hidden for grid layout */
-}
-
-/* Isometric Cards */
-.isoCardWrapper {
-  perspective: 1500px;
-  width: 100%;
+/* Tabs */
+.tabsContainer {
   display: flex;
   justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
 }
 
-.isoCard {
-  width: 100%;
-  background: var(--secondary-bg, #1a1a1a);
-  border: 1px solid rgba(0, 229, 255, 0.2);
-  border-radius: 12px;
-  padding: 2.5rem;
+.tabBtn {
+  background: var(--bg-light);
+  border: 2px solid var(--border-color);
   color: var(--text-color);
-  transform-style: preserve-3d;
-  transform: rotateX(10deg) rotateY(-5deg) rotateZ(2deg);
-  transition: transform 0.5s ease, box-shadow 0.5s ease;
-  box-shadow: 
-    -10px 10px 20px rgba(0, 0, 0, 0.5),
-    inset 0 0 20px rgba(0, 229, 255, 0.05);
-  position: relative;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tabBtn:hover {
+  border-color: var(--primary-color);
+  background: rgba(0, 229, 255, 0.05);
+}
+
+.tabBtn.activeTab {
+  background: var(--primary-color);
+  color: #000;
+  border-color: var(--primary-color);
+  box-shadow: 0 5px 15px rgba(0, 229, 255, 0.3);
+}
+
+/* Services Container */
+.servicesContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
   display: flex;
   flex-direction: column;
+  gap: 2.5rem;
 }
 
-.isoCard::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, transparent 100%);
+.serviceCard {
+  background: var(--bg-light);
+  border: 1px solid var(--border-color);
   border-radius: 12px;
-  pointer-events: none;
+  padding: 2.5rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: border-color 0.3s;
 }
 
-.isoCard:hover {
-  transform: rotateX(5deg) rotateY(-2deg) rotateZ(1deg) translateY(-10px);
-  box-shadow: 
-    -5px 5px 15px rgba(0, 0, 0, 0.6),
-    0 0 30px rgba(0, 229, 255, 0.2),
-    inset 0 0 30px rgba(0, 229, 255, 0.1);
-  border-color: rgba(0, 229, 255, 0.5);
+.serviceCard:hover {
+  border-color: var(--primary-color);
 }
 
 .cardHeader {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 1.5rem;
   margin-bottom: 1.5rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding-bottom: 1rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .cardIcon {
-  width: 50px;
-  height: 50px;
+  font-size: 3rem;
+  color: var(--primary-color);
   background: rgba(0, 229, 255, 0.1);
+  padding: 1rem;
   border-radius: 12px;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid rgba(0, 229, 255, 0.3);
-  box-shadow: 0 0 15px rgba(0, 229, 255, 0.2);
-  flex-shrink: 0;
-}
-
-.cardIcon svg {
-  width: 24px;
-  height: 24px;
-  color: var(--primary-color, #00e5ff);
 }
 
 .cardTitle {
-  font-size: 1.5rem;
+  font-size: 2rem;
   margin: 0;
-  color: #fff;
-  line-height: 1.2;
 }
 
-.cardContent {
-  flex-grow: 1;
+.cardBody {
   display: flex;
-  flex-direction: column;
+  gap: 3rem;
+  align-items: flex-start;
 }
 
-.cardContent p {
-  line-height: 1.6;
+.cardTextContent {
+  flex: 1;
+}
+
+.cardTextContent p {
+  font-size: 1.1rem;
+  line-height: 1.7;
   margin-bottom: 1.5rem;
-  font-size: 1rem;
-  color: #ccc;
+  color: var(--text-color);
 }
 
 .serviceList {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.8rem;
   list-style: none;
   padding: 0;
-  margin: auto 0 0 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
 }
 
 .serviceList li {
-  background: rgba(0,0,0,0.3);
-  padding: 0.6rem 0.8rem;
-  border-radius: 6px;
-  border-left: 3px solid var(--primary-color, #00e5ff);
-  font-size: 0.9rem;
+  font-size: 1rem;
+  color: var(--text-light);
   display: flex;
   align-items: center;
-  gap: 0.5rem;
 }
 
-.serviceList li::before {
-  content: "⚡";
-  font-size: 0.8rem;
+/* Before / After */
+.beforeAfterContainer {
+  flex: 1;
+  max-width: 500px;
+  width: 100%;
 }
 
-/* Alternate isometric rotation for every other card */
-.isoCardWrapper:nth-child(even) .isoCard {
-  transform: rotateX(10deg) rotateY(5deg) rotateZ(-2deg);
-  box-shadow: 
-    10px 10px 20px rgba(0, 0, 0, 0.5),
-    inset 0 0 20px rgba(0, 229, 255, 0.05);
+.baWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/10;
+  border-radius: 8px;
+  overflow: hidden;
+  --clip: 50%;
+  border: 2px solid var(--border-color);
 }
 
-.isoCardWrapper:nth-child(even) .isoCard:hover {
-  transform: rotateX(5deg) rotateY(2deg) rotateZ(-1deg) translateY(-10px);
-  box-shadow: 
-    5px 5px 15px rgba(0, 0, 0, 0.6),
-    0 0 30px rgba(0, 229, 255, 0.2),
-    inset 0 0 30px rgba(0, 229, 255, 0.1);
+.baImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
+.beforeOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(0 0, var(--clip) 0, var(--clip) 100%, 0 100%);
+}
+
+.sliderHandle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--clip);
+  width: 4px;
+  background: var(--primary-color);
+  transform: translateX(-50%);
+  z-index: 10;
+  pointer-events: none;
+}
+
+.sliderHandle::after {
+  content: "↔";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30px;
+  height: 30px;
+  background: var(--primary-color);
+  color: #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.sliderInput {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: ew-resize;
+  z-index: 20;
+}
+
+.baLabels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Hero Section CTA */
 .hero {
   text-align: center;
   padding: 6rem 1rem;
-  background: linear-gradient(180deg, transparent, rgba(0, 229, 255, 0.05));
+  background: linear-gradient(180deg, var(--bg-color) 0%, rgba(0, 229, 255, 0.05) 100%);
   margin-top: 4rem;
 }
 
 .hero h2 {
   font-size: 2.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
 }
 
 .ctaButton {
   display: inline-block;
-  padding: 1rem 2.5rem;
+  background-color: var(--primary-color);
+  color: #000;
+  padding: 1rem 3rem;
   font-size: 1.2rem;
   font-weight: 700;
-  color: #000;
-  background: linear-gradient(45deg, #00e5ff, #00ff88);
   border-radius: 50px;
   text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  box-shadow: 0 5px 15px rgba(0, 229, 255, 0.3);
   transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 229, 255, 0.3);
 }
 
 .ctaButton:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(0, 229, 255, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 229, 255, 0.4);
 }
 
-@media (max-width: 768px) {
-  .isometricContainer {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    padding: 2rem 1rem;
+@media (max-width: 900px) {
+  .cardBody {
+    flex-direction: column;
   }
-  .isoCard {
-    transform: none !important;
-    padding: 1.5rem;
+  .beforeAfterContainer {
+    max-width: 100%;
   }
-  .isoCardWrapper:nth-child(even) .isoCard {
-    transform: none !important;
-  }
+}
+
+@media (max-width: 600px) {
   .header h1 {
     font-size: 2.2rem;
+  }
+  .tabBtn {
+    width: 100%;
+  }
+  .serviceCard {
+    padding: 1.5rem;
+  }
+  .cardHeader {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  .cardTitle {
+    font-size: 1.5rem;
   }
 }
