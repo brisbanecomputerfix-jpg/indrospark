@@ -7,7 +7,7 @@ export const blogPosts = [
     date: "August 10, 2026",
     category: "Safety",
     readTime: "5 min read",
-    image: "/blog/switchboard-upgrade.png",
+    image: "/blog-images/switchboard-upgrade.png",
     content: `
 ## The Heart of Your Home's Electrical System
 
@@ -47,7 +47,7 @@ Upgrading your switchboard is an investment in your family's safety and your pro
     date: "August 05, 2026",
     category: "Advice",
     readTime: "4 min read",
-    image: "/blog/outdoor-power.png",
+    image: "/blog-images/outdoor-power.png",
     content: `
 ## Powering Your Outdoor Lifestyle
 
@@ -100,7 +100,7 @@ Ready to power up your patio? At Sparky Indro, we provide upfront, honest pricin
     date: "July 24, 2026",
     category: "Advice",
     readTime: "4 min read",
-    image: "/blog/choose-electrician.png",
+    image: "/blog-images/choose-electrician.png",
     content: `
 ## Why Choosing the Right Electrician Matters
 
@@ -132,7 +132,7 @@ At Sparky Indro, we tick all these boxes and more. We pride ourselves on being f
     date: "July 15, 2026",
     category: "Safety",
     readTime: "5 min read",
-    image: "/blog/dodgy-electrician.png",
+    image: "/blog-images/dodgy-electrician.png",
     content: `
 ## The Danger of Dodgy Sparkies
 
@@ -164,7 +164,7 @@ Don't risk your home or your family's safety to save a few bucks. Always use a v
     date: "July 02, 2026",
     category: "Energy Saving",
     readTime: "6 min read",
-    image: "/blog/bill-shock.png",
+    image: "/blog-images/bill-shock.png",
     content: `
 ## The Dreaded Quarterly Bill
 
@@ -198,7 +198,7 @@ Need help upgrading to LEDs or installing a smart monitor? Contact Sparky Indro 
     date: "June 20, 2026",
     category: "Preparation",
     readTime: "3 min read",
-    image: "/blog/before-calling.png",
+    image: "/blog-images/before-calling.png",
     content: `
 ## Be Prepared, Save Money
 
