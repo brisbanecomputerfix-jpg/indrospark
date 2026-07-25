@@ -1,3 +1,4 @@
+import Script from "next/script";
 export const metadata = {
   title: 'Interactive Electrical Troubleshooting | Sparky Indro',
   description: 'Self-diagnose common electrical faults with our interactive troubleshooting guide.',
@@ -6,7 +7,7 @@ export const metadata = {
 export default function Layout({ children }) {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{
+      <Script id="schema-layout.js" type="application/ld+json" dangerouslySetInnerHTML={{
         __html: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "FAQPage",
