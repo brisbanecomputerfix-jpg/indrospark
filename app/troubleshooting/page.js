@@ -1,6 +1,7 @@
 "use client";
 import { useState } from 'react';
 import styles from '../page.module.css';
+import ProblemTicker from '../../components/ProblemTicker';
 import Link from 'next/link';
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
@@ -75,6 +76,7 @@ export default function TroubleshootingPage() {
 
   return (
     <main ref={mainRef} className={styles.main} style={{ paddingTop: '100px', minHeight: '100vh' }}>
+      <ProblemTicker />
       <div className="container" style={{maxWidth: '700px'}}>
         <h1 className="gsap-fade-up" style={{textAlign: 'center', marginBottom: '2rem'}}>Interactive Troubleshooting Guide</h1>
         <p className="gsap-fade-up" style={{textAlign: 'center', color: 'var(--accent-color)', marginBottom: '3rem'}}>

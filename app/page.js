@@ -11,6 +11,7 @@ import Process from "@/components/Process";
 import RecentJobs from "@/components/RecentJobs";
 import FAQ from "@/components/FAQ";
 import Link from "next/link";
+import ProblemTicker from "@/components/ProblemTicker";
 
 export default function Home() {
   return (
@@ -31,6 +32,8 @@ export default function Home() {
           </a>
         </div>
       </section>
+
+      <ProblemTicker />
 
       <section className={`${styles.section} container`}>
         <h2 style={{ textAlign: "center" }}>Our Premium Services</h2>
