@@ -258,3 +258,44 @@
 .heroTextContainer .ctaButton {
   pointer-events: auto; /* Allow clicking the button */
 }
+
+/* Mobile Responsiveness Updates */
+@media (max-width: 768px) {
+  .hero {
+    padding: 1rem;
+  }
+  
+  .heroTextContainer {
+    padding: 1.5rem;
+    width: 95%;
+  }
+  
+  .title {
+    font-size: clamp(2.5rem, 8vw, 3.5rem);
+  }
+  
+  .subtitle {
+    font-size: 1.1rem;
+    margin-top: 1rem;
+  }
+  
+  .ctaButton {
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+  }
+  
+  .section {
+    padding: 4rem 0;
+  }
+  
+  .servicesGrid, .testimonialGrid, .googleReviewsGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  
+  .serviceCard {
+    padding: 2rem 1.5rem;
+  }
+}

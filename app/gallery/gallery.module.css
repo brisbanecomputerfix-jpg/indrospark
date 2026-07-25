@@ -53,3 +53,9 @@
   font-size: 0.9rem;
   font-weight: 600;
 }
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
