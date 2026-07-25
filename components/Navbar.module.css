@@ -71,3 +71,101 @@
   padding: 0.5rem 0;
   transition: all 0.3s ease;
 }
+
+.navLink {
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.navLink::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+.navLink:hover {
+  color: var(--primary-color);
+}
+
+.navLink:hover::after, .active::after {
+  width: 100%;
+}
+
+.active {
+  color: var(--primary-color);
+}
+
+/* Search Styles */
+.searchContainer {
+  margin-left: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.searchForm {
+  display: flex;
+  align-items: center;
+  position: relative;
+  background: transparent;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.searchOpen {
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 10px rgba(0, 229, 255, 0.2);
+}
+
+.searchInput {
+  width: 0;
+  opacity: 0;
+  border: none;
+  background: transparent;
+  color: var(--text-color);
+  padding: 0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: inherit;
+  font-size: 0.95rem;
+  outline: none;
+}
+
+.searchOpen .searchInput {
+  width: 180px;
+  opacity: 1;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+}
+
+.searchInput::placeholder {
+  color: rgba(255,255,255,0.5);
+}
+
+.searchButton {
+  background: transparent;
+  border: none;
+  color: var(--text-color);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.searchButton:hover {
+  color: var(--primary-color);
+  transform: scale(1.1);
+}
+
+.searchButton svg {
+  width: 20px;
+  height: 20px;
+}
