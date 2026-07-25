@@ -1,4 +1,3 @@
-import Script from "next/script";
 export const metadata = {
   title: 'Service Areas | Brisbane Electrician | Sparky Indro',
   description: 'Sparky Indro serves Indooroopilly, Toowong, St Lucia, and all surrounding Brisbane suburbs with premium electrical services.',
@@ -36,7 +35,7 @@ export default function Layout({ children }) {
 
   return (
     <>
-      <Script id="schema-areas-layout" type="application/ld+json" dangerouslySetInnerHTML={{
+      <script id="schema-areas-layout" type="application/ld+json" dangerouslySetInnerHTML={{
         __html: JSON.stringify(schemaData)
       }} />
       {children}

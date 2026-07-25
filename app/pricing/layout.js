@@ -1,4 +1,3 @@
-import Script from "next/script";
 export const metadata = {
   title: 'Transparent Electrician Pricing | Sparky Indro',
   description: '$110 call-out fee and honest pricing for all electrical jobs in Indooroopilly. Fixed price quotes available.',
@@ -7,7 +6,7 @@ export const metadata = {
 export default function Layout({ children }) {
   return (
     <>
-      <Script id="schema-layout.js" type="application/ld+json" dangerouslySetInnerHTML={{
+      <script id="schema-layout.js" type="application/ld+json" dangerouslySetInnerHTML={{
         __html: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Offer",
